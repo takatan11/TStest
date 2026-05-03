@@ -7,3 +7,4 @@ for(let j=0;j<empty.length;j++){
 }
 }
 }
+//git動作確認
