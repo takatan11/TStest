@@ -1,10 +1,9 @@
-function filterEven(numbers){
-     let answer=[];
-     for(const n of numbers){
-          if (n%2==0){
-               answer.push(n);
-          }
+
+function sum(numbers){
+     let answer=0;
+     for(const n of  numbers){
+          answer=answer+n;
      }
      return answer;
 }
-console.log(filterEven([1,2,3,4,5,6]));
+console.log(sum([1, 2, 3, 4, 5]));
