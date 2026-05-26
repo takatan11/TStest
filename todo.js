@@ -30,7 +30,7 @@ function work(userInput){  //打ち込まれたコマンドに合わせて適切
       });
       console.log(`コマンド：${command}`);
      console.log(`内容:${comment}`);
-     fs.writeFileSync('tasks.json',JSON.stringify(tasks,null,2),'utf-8');
+     fs.appendFileSync('tasks.json',JSON.stringify(tasks,null,2),'utf-8');
      console.log("------------------");
      console.log("Todoを保存しました");
      console.log("------------------");
