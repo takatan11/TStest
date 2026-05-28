@@ -1,6 +1,7 @@
 // まだ実装できていないもの：終了したタスクを表示しないようにする、タスクを削除する
 // ファイルの読み込み動作を実装できていない。listで表示する内容はファイルからとってきた内容を表示する
 // 連番で一意のIDふっておかないと削除やdoneの処理やりにくそう
+//switch文の書き直しから
 
 import fs from 'fs';
 
@@ -21,8 +22,8 @@ function work(userInput){  //打ち込まれたコマンドに合わせて適切
       const command=userInput[2];
       const comment=userInput[3];
       const lastId = tasks.length > 0 ? tasks[tasks.length - 1].id : 0;   // 最後のタスクのID（まだ無ければ0）
-
-      if(userInput==="add"){
+      switch(userInput[2]){
+      case "add":
       tasks.push({
             id: lastId + 1,          // 前回のIDに +1（順番に振る）
             tasks:comment,
@@ -34,25 +35,23 @@ function work(userInput){  //打ち込まれたコマンドに合わせて適切
      console.log("------------------");
      console.log("Todoを保存しました");
      console.log("------------------");
-      }
+     break;
 
-      else if(userInput==="list"){
+      case "list":
             console.log(`コマンド：${command}`);
             console.log(tasks); //jsonから読み込んできた内容を表示するから、Input()は使用しない
-      }
 
-      else if(userInput=="done"){
-
-
-      }
+      case "done":
+            //未定義
       
-      else if(userInput=="delete"){
+      case "delete"{
 
       }
 
       else{
             console.log("エラー：有効なコマンドを入力してください。");
       }
+}
 }
 
 
